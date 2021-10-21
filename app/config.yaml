@@ -1,0 +1,31 @@
+app:
+  name: golang-healthcheck
+  banner: false
+
+upstream:
+  base-url: https://topvalue.me/topvalue_cj
+  hmac-key: e0d12f5e1f3c19ca817c9d88913b703552c0d827d1d97b14dbbd8ed16199244e
+
+mongo:
+  uri: mongodb+srv://tuyu111:034206822@cluster0.lsel6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  database: go-rest-api
+  min-pool-size: 1
+  max-pool-size: 5
+  max-idle-time: 60000
+
+fiber:
+  address: 0.0.0.0:3000
+  read-timeout: 60000
+  write-timeout: 60000
+  idle-timeout: 60000
+
+queue:
+  max-parallel: 20
+
+logging:
+  level: info
+
+health-check:
+  cache-duration: 5000
+  refresh-interval: 5000
+  initial-delay: 1000
